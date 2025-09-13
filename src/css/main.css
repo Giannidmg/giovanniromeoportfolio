@@ -21,8 +21,6 @@ html, body {
     
 }
 body {
-    display: flex;
-    flex-direction: column;
     color: var(--font-color-main);
 }
 
@@ -40,31 +38,29 @@ body {
     max-height: 300px;
 }
 
-#header {
+#menubar {
     left: 0px;
     top: 0px;
-    width: 100vw;
-    height: fit-content;
+    width: auto;
+    height: 30px;
     display: flex;
-    position: fixed;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: var(--padding);
+    background-color: black;
 
 }
 #menu {
     display: flex;
     flex-direction: row;
     gap: 2px;
-    background-color: var(--background-color-menu-primary);
     height: 100%;
     padding: var(--padding);
-    border-radius: 35px;
 }
 
 img.logo{
-    max-height: 50px;    
+    height: 25px;    
 }
 
 #logo{
@@ -72,48 +68,68 @@ img.logo{
     height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: var(--background-color-card-primary);
     padding: 5px;
-    border-radius: 30px;
 }
 
-.buttonmenu{
-    border-radius: 30px;
-    color: white;
+.menu-button{
+    height: 30px;
+    width: 70px;
     display: flex;
-    background-color: var(--background-color-button-inactive);
-    height: 50px;
-    width: 100px;
+    justify-content: center;
     align-items: center;
-    justify-content: center;
-    border-color: grey;
-    border-style: solid;
-
+    color: lightgray;
+    background-color: rgba(255,255,255,0);
+    border-style: none;
+    border-color: none;
+}
+.menu-button:hover {
+    color: white;
 }
 
-#body{
+
+#title{
     display: flex;
     justify-content: center;
-    margin-top: 6vh;
-
-    top: 0px;
-    left: 0px;
 }
 
-.card{
+.main-card{
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 90vh;
-    width: 100vw;
+    height: fit-content;
+    width: auto;
     border-radius: 30px;
     justify-content: center;
     gap: 30px;
     background-color: white;
-    padding: 5px;
+    padding: 30px;
+    margin: 10px;
+}
+.main-card-pile{
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 30px;
+    gap: 30px;
+    background-color: black;
+
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 30vh;
+    width: 20vw;
+    border-radius: 30px;
+    gap: 20px;
+    background-color: white;
+
 }
 
 #imgprofile{
+    width: 40vw;
+max-width: 400px;
     border-radius: 50%;
 }
 
@@ -135,7 +151,7 @@ img.logo{
     flex-direction: row;
     align-items: center;
     height: 30vh;
-    width: 100%;
+    width: auto;
     border-radius: 30px;
     justify-content: center;
     gap: 30px;
@@ -143,3 +159,4 @@ img.logo{
     padding: 5px;
 
 }
+
