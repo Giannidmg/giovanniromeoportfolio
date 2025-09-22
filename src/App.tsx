@@ -3,8 +3,7 @@ import "./App.css";
 import { Tobe } from "./component/Tobe";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [tobe, setTobe] = useState(true);
+  const [tobe] = useState(true);
 
   return(
     <>
