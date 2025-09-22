@@ -1,19 +1,16 @@
-import { useState } from 'react'
-import logo from '/favicon.png'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import { Tobe } from "./component/Tobe";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [tobe, setTobe] = useState(true);
 
-  return (
+  return(
     <>
-      <div id="tobe">
-        <img id="tobelogo" src="public/favicon.png" alt="tobelogo"></img>
-        <h1>Stay Tuned!</h1>
-        <h2>Under construction will arrive in a few days...</h2>
-    </div>
+      {tobe && <Tobe />}
     </>
   )
 }
 
-export default App
+export default App;
