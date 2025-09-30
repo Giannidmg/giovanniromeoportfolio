@@ -1,4 +1,6 @@
-export function Tobe() {
+import "../assets/styles/Tobe.css"
+
+function Tobe() {
   return (
   <div id="tobe">
     <img id="tobelogo" src="/logo.png" alt="tobelogo"></img>
@@ -8,3 +10,4 @@ export function Tobe() {
   )
 }
 
+export default Tobe;
