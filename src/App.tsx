@@ -10,18 +10,20 @@ import { useInView } from "motion-v"
 function App() {
   const [tobe] = useState(false);
   const [language, setLanguage] = useState("en");
+  const [mainInView, setMainInView] = useState(true);
   const main = useRef(null)
-  const mainInView = useInView(main, { threshold: 0.5 });
-
-
-
-  useEffect(()=>{
-    inPage();
-  })
+  // const mainInView = useInView(main, { threshold: 0.5 });
+  
+  
   
   useEffect(()=>{
-    console.log("mainInView: ",mainInView)
-  }, [mainInView])
+    inPage();
+    mainInPage();
+  })
+  
+  // useEffect(()=>{
+  //   console.log("mainInView: ",mainInView)
+  // }, [mainInView])
 
   function inPage(){
     var elements_to_watch = document.querySelectorAll(".watch");
@@ -36,6 +38,25 @@ function App() {
     var observer = new IntersectionObserver(callback, { threshold: 0.5 } );
     elements_to_watch.forEach((element) => {
       observer.observe(element); 
+    });
+  }
+
+
+  function mainInPage(){
+    console.log("mainInPage")
+    var elementsMain = document.querySelectorAll(".main");
+    var callbackMain = function(items: any[]){
+      items.forEach((item) => {
+        if(item.isIntersecting){
+          setMainInView(true);
+        }else{
+          setMainInView(false);
+        }
+      });
+    }
+    var observerMain = new IntersectionObserver(callbackMain, { threshold: 0 } );
+    elementsMain.forEach((element) => {
+      observerMain.observe(element); 
     });
   }
 
