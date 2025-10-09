@@ -2,9 +2,10 @@ import "../assets/styles/PopUpBar.css"
 
 function PopUpBar(props: any) {
 
+    const {language, setLanguage} = props
 
   function handleClick() {
-    props.setLanguage(props.language === "en" ? "it" : "en")
+    setLanguage(props.language === "en" ? "it" : "en")
   }
 
 
@@ -30,8 +31,8 @@ function PopUpBar(props: any) {
             <button className="contact-button">Contact Me</button>
         </div>
           </div>
-          {props.language === "en" && <img className="pop-flag" src="italy_flag.svg" alt="it" onClick={handleClick}/>}
-          {props.language === "it" && <img className="pop-flag" src="uk_flag.svg" alt="uk" onClick={handleClick}/>}
+          {language === "en" && <img className="pop-flag" src="italy_flag.svg" alt="it" onClick={handleClick}/>}
+          {language === "it" && <img className="pop-flag" src="uk_flag.svg" alt="uk" onClick={handleClick}/>}
       </nav>
     </div>
   )

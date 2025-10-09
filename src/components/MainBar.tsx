@@ -1,10 +1,11 @@
 import "../assets/styles/MainBar.css"
 
 function MainBar(props: any) {
+  const {language, setLanguage} = props
 
 
   function handleClick() {
-    props.setLanguage(props.language === "en" ? "it" : "en")
+    setLanguage(props.language === "en" ? "it" : "en")
   }
 
 
@@ -27,8 +28,8 @@ function MainBar(props: any) {
         <div className="menu-btn">
             <button className="contact-button">Contact Me</button>
         </div>
-          {props.language === "en" && <img className="flag" src="italy_flag.svg" alt="it" onClick={handleClick}/>}
-          {props.language === "it" && <img className="flag" src="uk_flag.svg" alt="uk" onClick={handleClick}/>}
+          {language === "en" && <img className="flag" src="italy_flag.svg" alt="it" onClick={handleClick}/>}
+          {language === "it" && <img className="flag" src="uk_flag.svg" alt="uk" onClick={handleClick}/>}
       </nav>
     </div>
   )
