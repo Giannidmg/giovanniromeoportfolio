@@ -5,23 +5,20 @@ import Main from "./components/Main";
 import PopUpBar from "./components/PopUpBar";
 import MainBar from "./components/MainBar";
 import Description from "./components/Description";
-import { useInView } from "motion-v"
+import { useInView } from "motion/react"
+import Carousel from "./components/Carousel";
 
 function App() {
   const [tobe] = useState(false);
   const [language, setLanguage] = useState("en");
-  const main = useRef(null)
-  const mainInView = useInView(main, { threshold: 0.5 });
+  const mainref = useRef<HTMLElement | null>(null)
+  const mainInView = useInView(mainref, { margin: "-50px" });
 
 
 
   useEffect(()=>{
     inPage();
   })
-  
-  useEffect(()=>{
-    console.log("mainInView: ",mainInView)
-  }, [mainInView])
 
   function inPage(){
     var elements_to_watch = document.querySelectorAll(".watch");
@@ -43,12 +40,15 @@ function App() {
   return (
     <>
       {tobe && <Tobe />}
-      {!tobe && <>
+      {!tobe && 
+      <>
       <MainBar language={language} setLanguage={setLanguage}/>
       {!mainInView && <PopUpBar language={language} setLanguage={setLanguage}/>}
-      <Main ref={main} language={language} />
+      <Main mainref={mainref} language={language} />
       <Description language={language}/>
-      </>}
+      <Carousel/>
+      </>
+      }
     </>
   );
 }
