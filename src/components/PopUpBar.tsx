@@ -11,7 +11,7 @@ function PopUpBar(props: any) {
 
   return (
     <div className="pop-menu-bar up-in">
-        <nav className="pop-menu">
+        <nav className="pop-menu glass">
           <img className="pop-logo" src="logo_white.png" alt="logo" />
           <div className="pop-flex">
 

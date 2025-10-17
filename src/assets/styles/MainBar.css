@@ -1,6 +1,8 @@
 .menu-bar{
     position: relative;
-    top: 5px;
+    display: flex;
+    align-items: center;
+    top: 0;
     left: 0;
     background-color: black;
     height: 4vh;
@@ -39,7 +41,6 @@
 }
 .menu-btn{
     height: 100%;
-    padding: 0px;
     display: flex;
     align-items: center;
     justify-content: center;

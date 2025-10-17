@@ -13,9 +13,9 @@
     align-items: center;
     position: sticky;
     top: 5px;
-    margin: 0 auto;
+    margin: 0 10px;
     height: 4vh;
-    width: 100%;
+    width: auto;
     z-index: 1000;
     animation: top-in 0.7s;
 }
@@ -57,10 +57,10 @@
 
     border-radius: 15px;
     padding-block: 12px;
-    -webkit-backdrop-filter: blur(20px);
+    /* -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     background: rgba(18,18,18,0.8);;
-    box-shadow: 0 0 0 1px #282828;
+    box-shadow: 0 0 0 1px #282828; */
     overflow: hidden;
     padding-left: 20px;
     padding-right: 20px;
@@ -85,6 +85,14 @@ button{
 button:hover{
     color: rgb(255, 255, 255);
     cursor: pointer;  
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.20);
+  border: 0px solid transparent;
+  box-shadow: -1px -1px 2px 0px rgba(255, 255, 255, 0.5), 1px 1px 2px 0px rgba(255, 255, 255, 0.5), 0 16px 32px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 

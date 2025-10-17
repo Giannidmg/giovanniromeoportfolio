@@ -17,7 +17,8 @@ function Description(props: any) {
   return (
     <>
     <div className="section background-gradient ">
-      <div className="description watch fade-in">
+    <div id="corner"></div>
+      <div className="description glass watch fade-in">
         <div className="t">
           <p>{textPresentationTitle}</p>
         </div>
